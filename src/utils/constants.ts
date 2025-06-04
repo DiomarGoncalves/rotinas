@@ -1,2 +1,5 @@
-// API base URL - Change this to your backend URL in production
-export const API_URL = 'http://localhost:5000/api';
+export const API_URL =
+  import.meta.env.VITE_API_URL ||
+  (window.location.hostname === 'localhost'
+    ? 'http://localhost:5000/api'
+    : '/api');
